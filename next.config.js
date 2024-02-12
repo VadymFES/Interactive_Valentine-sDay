@@ -3,8 +3,7 @@
  */
 const nextConfig = {
  
-    basePath: '/Interactive_Valentine-sDay',
-    assetPrefix: '/Interactive_Valentine-sDay/',
+
 
   
 }
