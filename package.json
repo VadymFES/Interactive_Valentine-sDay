@@ -21,7 +21,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.1.0"
   },
-  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "description": "This project is a playful and interactive web application designed to offer a unique and engaging way to ask someone to be your Valentine.",
   "main": "index.js",
   "author": "Vadym Fesiuk",
   "license": "ISC"
