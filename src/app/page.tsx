@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import styles from "./page.module.css";
-import Image from 'next/image'; // Import the Image component
 
 
 export default function Home() {
@@ -32,7 +31,7 @@ export default function Home() {
       "Я буду любить тебя❤️",
     ];
 
-    const noGifs = Array.from({ length: 12 }, (_, i) => `/public/giphy/giphy_no_${i + 1}.gif`);
+    const noGifs = Array.from({ length: 12 }, (_, i) => `/giphy/giphy_no_${i + 1}.gif`);
 
     const changeToYesGif = () => {
       setGifSrc('/giphy/giphy_yes.gif');
@@ -71,7 +70,7 @@ export default function Home() {
       {showCelebration && <div className={styles.celebration}>Ти ж моє сонечко ❤️❤️❤️</div>}
 
       <div className={styles.giphys}>
-          <Image 
+      <img 
             src={gifSrc} 
             alt="gif" 
             className={styles.gif}
