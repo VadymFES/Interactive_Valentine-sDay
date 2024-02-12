@@ -1,12 +1,13 @@
 @font-face {
-    font-family: 'Pacifico';
-    src: url('/public/fonts/Pacifico-Regular.ttf') format('woff');
+    font-family: 'Shantell Sans';
+    src: url('/public/fonts/ShantellSans-Italic-VariableFont_BNCE,INFM,SPAC,wght.ttf') format('ttf'),
+          url('/public/fonts/ShantellSans-VariableFont_BNCE,INFM,SPAC,wght.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
   }
   
   body {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Shantell Sans', cursive;
     margin: 0;
     padding: 0;
     box-sizing: border-box;

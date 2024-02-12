@@ -12,16 +12,18 @@
 
 .page_gif__5_u31 {
   height: 50vh;
+  max-width: 100%; 
 }
 
 .page_title__3jonF{
   font-size: 2em;
   color: #fa00af;
-  
+  /* Reduce the font size on smaller screens */
 }
 
 .page_titles__G_kF6 {
   color: #8c00ff;
+  /* Optional: Adjust the font size for smaller screens */
 }
 
 .page_buttons_container__fmAyC {
@@ -29,7 +31,20 @@
   align-items: center;
   justify-content: center;
   padding-top: 20px;
-  gap: 60px; 
+  gap: 60px;
+  /* Adjust the layout for smaller screens */
+}
+
+.page_yes_btn__Wl0GD, .page_no_btn__zUfx1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 40px;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* Adjust padding and font size for smaller screens */
 }
 
 .page_yes_btn__Wl0GD {
@@ -40,21 +55,10 @@
   background-color: rgb(255, 56, 56);
 }
 
-.page_no_btn__zUfx1, .page_yes_btn__Wl0GD {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 40px;
-  font-size: 1.5em;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 .page_yes_btn_enhanced__kPJ_i {
-  transform: scale(1.1)!important; 
-  background-color: #5cfef9; 
-  color: white; 
+  transform: scale(1.1)!important;
+  background-color: #5cfef9;
+  color: white;
   transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
@@ -70,13 +74,53 @@
   justify-content: center;
   font-size: 2em;
   color: white;
-  animation: page_fadeOut__Cdvqk 10s forwards; /* Fade out effect */
+  animation: page_fadeOut__Cdvqk 10s forwards;
 }
 
 @keyframes page_fadeOut__Cdvqk {
   to {
     opacity: 0;
     visibility: hidden;
+  }
+}
+
+/* Media queries for screens smaller than 768px */
+@media (max-width: 768px) {
+  
+  .page_gif__5_u31 {
+    height: 30vh; /* Make the gif smaller on small screens */
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+  }
+
+  .page_title__3jonF, .page_titles__G_kF6 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em; 
+    font-weight: 900;
+  }
+
+  .page_buttons_container__fmAyC {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 20px; /* Reduce gap between buttons */
+  }
+
+  .page_yes_btn__Wl0GD {
+    background-color: rgb(49, 198, 49);
+  }
+  
+  .page_no_btn__zUfx1 {
+    background-color: rgb(255, 56, 56);
+  }
+  
+  .page_yes_btn__Wl0GD, .page_no_btn__zUfx1 {
+    padding: 15px 30px; /* Reduce button size */
+    font-size: 1.2em; /* Make text inside buttons smaller */
+  }
+
+  .page_celebration__Ol4zt {
+    font-size: 1.5em; /* Make celebration text smaller */
   }
 }
 

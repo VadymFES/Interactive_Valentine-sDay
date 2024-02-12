@@ -2,14 +2,15 @@
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/app/global.css ***!
   \****************************************************************************************************************************************************************************************************************************************************************/
 @font-face {
-    font-family: 'Pacifico';
-    src: url('/public/fonts/Pacifico-Regular.ttf') format('woff');
+    font-family: 'Shantell Sans';
+    src: url('/public/fonts/ShantellSans-Italic-VariableFont_BNCE,INFM,SPAC,wght.ttf') format('ttf'),
+          url('/public/fonts/ShantellSans-VariableFont_BNCE,INFM,SPAC,wght.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
   }
   
   body {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Shantell Sans', cursive;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
