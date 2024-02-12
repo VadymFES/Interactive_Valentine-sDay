@@ -32,7 +32,7 @@ export default function Home() {
       "Я буду любить тебя❤️",
     ];
 
-    const noGifs = Array.from({ length: 12 }, (_, i) => `/giphy/giphy_no_${i + 1}.gif`);
+    const noGifs = Array.from({ length: 12 }, (_, i) => `/Interactive_Valentine-sDay/public/giphy/giphy_no_${i + 1}.gif`);
 
     const changeToYesGif = () => {
       setGifSrc('/giphy/giphy_yes.gif');
