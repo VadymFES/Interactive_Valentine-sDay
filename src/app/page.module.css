@@ -9,16 +9,18 @@
 
 .gif {
   height: 50vh;
+  max-width: 100%; 
 }
 
 .title{
   font-size: 2em;
   color: #fa00af;
-  
+  /* Reduce the font size on smaller screens */
 }
 
 .titles {
   color: #8c00ff;
+  /* Optional: Adjust the font size for smaller screens */
 }
 
 .buttons_container {
@@ -26,7 +28,20 @@
   align-items: center;
   justify-content: center;
   padding-top: 20px;
-  gap: 60px; 
+  gap: 60px;
+  /* Adjust the layout for smaller screens */
+}
+
+.yes_btn, .no_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 40px;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* Adjust padding and font size for smaller screens */
 }
 
 .yes_btn {
@@ -37,21 +52,10 @@
   background-color: rgb(255, 56, 56);
 }
 
-.no_btn, .yes_btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 40px;
-  font-size: 1.5em;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 .yes_btn_enhanced {
-  transform: scale(1.1)!important; 
-  background-color: #5cfef9; 
-  color: white; 
+  transform: scale(1.1)!important;
+  background-color: #5cfef9;
+  color: white;
   transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
@@ -67,12 +71,51 @@
   justify-content: center;
   font-size: 2em;
   color: white;
-  animation: fadeOut 10s forwards; /* Fade out effect */
+  animation: fadeOut 10s forwards;
 }
 
 @keyframes fadeOut {
   to {
     opacity: 0;
     visibility: hidden;
+  }
+}
+
+/* Media queries for screens smaller than 768px */
+@media (max-width: 768px) {
+  
+  .gif {
+    height: 30vh; /* Make the gif smaller on small screens */
+    max-width: fit-content;
+  }
+
+  .title, .titles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em; 
+    font-weight: 900;
+  }
+
+  .buttons_container {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 20px; /* Reduce gap between buttons */
+  }
+
+  .yes_btn {
+    background-color: rgb(49, 198, 49);
+  }
+  
+  .no_btn {
+    background-color: rgb(255, 56, 56);
+  }
+  
+  .yes_btn, .no_btn {
+    padding: 15px 30px; /* Reduce button size */
+    font-size: 1.2em; /* Make text inside buttons smaller */
+  }
+
+  .celebration {
+    font-size: 1.5em; /* Make celebration text smaller */
   }
 }
