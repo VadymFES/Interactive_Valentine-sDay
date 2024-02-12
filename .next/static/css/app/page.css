@@ -1,0 +1,82 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./src/app/page.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+.page_main__GlU4n {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: rgb(255, 157, 250);
+}
+
+.page_gif__5_u31 {
+  height: 50vh;
+}
+
+.page_title__3jonF{
+  font-size: 2em;
+  color: #fa00af;
+  
+}
+
+.page_titles__G_kF6 {
+  color: #8c00ff;
+}
+
+.page_buttons_container__fmAyC {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  gap: 60px; 
+}
+
+.page_yes_btn__Wl0GD {
+  background-color: rgb(49, 198, 49);
+}
+
+.page_no_btn__zUfx1 {
+  background-color: rgb(255, 56, 56);
+}
+
+.page_no_btn__zUfx1, .page_yes_btn__Wl0GD {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 40px;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.page_yes_btn_enhanced__kPJ_i {
+  transform: scale(1.1)!important; 
+  background-color: #5cfef9; 
+  color: white; 
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.page_celebration__Ol4zt {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(245, 74, 103, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  color: white;
+  animation: page_fadeOut__Cdvqk 10s forwards; /* Fade out effect */
+}
+
+@keyframes page_fadeOut__Cdvqk {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
