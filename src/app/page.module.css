@@ -50,9 +50,9 @@
 }
 
 .yes_btn_enhanced {
-  transform: scale(1.1)!important; /* Make the button slightly bigger */
-  background-color: #5cfef9; /* A brighter color */
-  color: white; /* Change text color for better visibility */
+  transform: scale(1.1)!important; 
+  background-color: #5cfef9; 
+  color: white; 
   transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
