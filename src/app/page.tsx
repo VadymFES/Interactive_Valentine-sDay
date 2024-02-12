@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import styles from "./page.module.css";
+import Image from 'next/image'; // Import the Image component
+
 
 export default function Home() {
     const [gifSrc, setGifSrc] = useState('/giphy/giphy_1.gif');
@@ -66,33 +68,39 @@ export default function Home() {
 
     return (
       <main className={styles.main}>
-        {showCelebration && <div className={styles.celebration}>Ти ж моє сонечко ❤️❤️❤️</div>}
+      {showCelebration && <div className={styles.celebration}>Ти ж моє сонечко ❤️❤️❤️</div>}
 
-        <div className={styles.giphys}>
-            <img src={gifSrc} alt="gif" className={styles.gif}/>
+      <div className={styles.giphys}>
+          <Image 
+            src={gifSrc} 
+            alt="gif" 
+            className={styles.gif}
+            width={500}
+            height={300}
+          />
+      </div>
+
+      {showTitle && <h1 className={styles.title}>Ты будешь моей Валентинкой ? ❤️🥰</h1>}
+
+      <h1 className={styles.titles}>{title}</h1>
+
+      {showButtons && (
+        <div className={styles.buttons_container}>
+            <button
+                className={styles.yes_btn}
+                style={yesButtonStyle}
+                onClick={changeToYesGif}>
+                Да!💕
+            </button>
+            <button 
+                className={styles.no_btn} 
+                style={noButtonStyle} 
+                onClick={changeToNoGif}
+                disabled={noButtonOpacity === 0}> 
+                Нет😢
+            </button>
         </div>
-
-        {showTitle && <h1 className={styles.title}>Ты будешь моей Валентинкой ? ❤️🥰</h1>}
-
-        <h1 className={styles.titles}>{title}</h1>
-
-        {showButtons && (
-          <div className={styles.buttons_container}>
-              <button
-                  className={styles.yes_btn}
-                  style={yesButtonStyle}
-                  onClick={changeToYesGif}>
-                  Да!💕
-              </button>
-              <button 
-                  className={styles.no_btn} 
-                  style={noButtonStyle} 
-                  onClick={changeToNoGif}
-                  disabled={noButtonOpacity === 0}> 
-                  Нет😢
-              </button>
-          </div>
-        )}
-      </main>
-    );
+      )}
+    </main>
+  );
 }
