@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Pacifico';
+    src: url('/public/fonts/Pacifico-Regular.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'Pacifico', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  

@@ -1,95 +1,98 @@
-import Image from "next/image";
+"use client"
+
+import React, { useState } from 'react';
 import styles from "./page.module.css";
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    const [gifSrc, setGifSrc] = useState('/giphy/giphy_1.gif');
+    const [noGifIndex, setNoGifIndex] = useState(0);
+    const [showCelebration, setShowCelebration] = useState(false);
+    const [title, setTitle] = useState('');
+    const [noPressCount, setNoPressCount] = useState(0);
+    const [noButtonOpacity, setNoButtonOpacity] = useState(1);
+    const [showButtons, setShowButtons] = useState(true); // New state to control button container visibility
+    const [showTitle, setShowTitle] = useState(true); // New state to control title visibility
+
+    // Titles for "No" button
+    const noTitles = [
+      "Точно нет?😔",
+      "Может, всё-таки да?😊",
+      "Подумай ещё разок!😢",
+      "Я буду ждать твоего да!😌",
+      "Ты уверена?😣",
+      "Дай шанс мне!😇",
+      "Ну пожалуйста, сладость!🙏",
+      "Не отказывай мне...😖",
+      "Ты разбиваешь мне сердце🥺",
+      "Ты меня не любишь?😭",
+      "Я буду плакать😢",
+      "Не поступай со мной так😞",
+      "Я буду любить тебя❤️",
+    ];
+
+    const noGifs = Array.from({ length: 12 }, (_, i) => `/giphy/giphy_no_${i + 1}.gif`);
+
+    const changeToYesGif = () => {
+      setGifSrc('/giphy/giphy_yes.gif');
+      setShowCelebration(true);
+      setTimeout(() => setShowCelebration(false), 5000); // Hide after 5 seconds
+      setTitle('kus kus kus ❤️❤️❤️'); // Celebration title
+      setShowButtons(false); // Hide button container
+      setShowTitle(false); // Hide main title
+    };
+
+    const changeToNoGif = () => {
+      setNoPressCount(prevCount => prevCount + 1);
+      setNoButtonOpacity(prevOpacity => Math.max(prevOpacity - 0.1, 0));
+      setNoGifIndex(prevIndex => {
+        const newIndex = (prevIndex + 1) % noGifs.length;
+        setGifSrc(noGifs[newIndex]);
+        setTitle(noTitles[newIndex % noTitles.length]);
+        return newIndex;
+      });
+    };
+
+    const yesButtonScale = 1 + noPressCount * 0.1;
+    const yesButtonStyle = {
+      transform: `scale(${yesButtonScale})`,
+      transition: 'transform 0.3s ease-in-out',
+      color: noPressCount > 0 ? 'white' : '',
+    };
+
+    const noButtonStyle = {
+      opacity: noButtonOpacity,
+      transition: 'opacity 0.3s ease-in-out',
+    };
+
+    return (
+      <main className={styles.main}>
+        {showCelebration && <div className={styles.celebration}>Ти ж моє сонечко ❤️❤️❤️</div>}
+
+        <div className={styles.giphys}>
+            <img src={gifSrc} alt="gif" className={styles.gif}/>
         </div>
-      </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        {showTitle && <h1 className={styles.title}>Ты будешь моей Валентинкой ? ❤️🥰</h1>}
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+        <h1 className={styles.titles}>{title}</h1>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+        {showButtons && (
+          <div className={styles.buttons_container}>
+              <button
+                  className={styles.yes_btn}
+                  style={yesButtonStyle}
+                  onClick={changeToYesGif}>
+                  Да!💕
+              </button>
+              <button 
+                  className={styles.no_btn} 
+                  style={noButtonStyle} 
+                  onClick={changeToNoGif}
+                  disabled={noButtonOpacity === 0}> 
+                  Нет😢
+              </button>
+          </div>
+        )}
+      </main>
+    );
 }

@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+#Interactive Valentine's Day Proposal
+##Description
+This project is a playful and interactive web application designed to offer a unique and engaging way to ask someone to be your Valentine. It utilizes React's powerful state management features to dynamically update the UI based on user interactions. The application displays a series of GIFs and messages that change as the user interacts with the "Yes" and "No" buttons, creating a fun and memorable experience.
 
-## Getting Started
+##Features
+Dynamic GIF Display: Showcases different GIFs based on the user's choices, with a special celebration GIF when the user clicks "Yes".
+Engaging Button Interactions: The "No" button gradually becomes less opaque with each click, and the "Yes" button increases in scale, emphasizing the encouragement to say "Yes".
+Custom Messages: Displays a series of playful and persuasive messages encouraging the user to reconsider if they initially choose "No".
+Celebration Mode: When the user clicks "Yes", the app reveals a celebratory message and hides the question and buttons to highlight the celebration.
+Responsive Design: Utilizes CSS modules for styling, ensuring a responsive and attractive layout across different devices.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+##Technologies Used
+React: For building the user interface and managing state.
+CSS Modules: For styling components in a modular and reusable way.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+##Setup and Installation
+Clone the Repository
+git clone 
+```cd interactive-valentine```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+##Install Dependencies
+```npm install```
 
-## Learn More
+##Run the Application
+```npm start```
+The application will start running on ```http://localhost:3000```
 
-To learn more about Next.js, take a look at the following resources:
+##How to Use
+Interact with Buttons: Click on the "Yes" or "No" buttons to navigate through the experience.
+Enjoy the GIFs and Messages: Watch as the GIFs and messages change based on your choices.
+Celebrate: If you click "Yes", enjoy the special celebration GIF and message.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+##Contributing
+Contributions are welcome! Please feel free to submit a pull request or open an issue to discuss potential changes or improvements.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
