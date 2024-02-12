@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import styles from "./page.module.css";
+import Image from 'next/image';
 
 
 export default function Home() {
@@ -70,7 +71,7 @@ export default function Home() {
       {showCelebration && <div className={styles.celebration}>Ти ж моє сонечко ❤️❤️❤️</div>}
 
       <div className={styles.giphys}>
-      <img 
+      <Image
             src={gifSrc} 
             alt="gif" 
             className={styles.gif}
