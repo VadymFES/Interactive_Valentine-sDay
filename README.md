@@ -24,8 +24,6 @@ Responsive Design: Utilizes CSS modules for styling, ensuring a responsive and a
 
     git clone https://github.com/VadymFES/Interactive_Valentine-sDay.git
 
-    ```cd valentine14```
-
 2. Install Dependencies
 ```npm install```
 
